@@ -1,0 +1,223 @@
+/* ================= GLOBAL ================= */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  padding: 20px;
+}
+
+/* ================= MAIN CARD ================= */
+
+.payslip-container {
+  width: 720px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+/* ================= SECTION CARD ================= */
+
+.section {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  padding: 15px;
+}
+
+/* ================= GREEN HEADER ================= */
+
+.section h3 {
+  margin: -15px -15px 12px -15px;
+  padding: 8px 15px;
+  background: #2e7d32;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ================= GRID ================= */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ================= INPUTS ================= */
+
+input {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+
+/* ================= EARNINGS / DEDUCTIONS ROW ================= */
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* ================= ADD BUTTON ================= */
+
+.section button {
+  background: #f1f1f1;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary {
+  background: #eef4f7;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #d6dee5;
+  font-size: 13px;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.actions {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 8px 18px;
+  margin: 5px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-print {
+  background: #2e7d32;
+  color: white;
+}
+
+.btn-reset {
+  background: #c62828;
+  color: white;
+}
+
+/* ================= PRINT SETTINGS ================= */
+
+/* Force A4 single page */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .payslip-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Keep everything on one page */
+  .payslip-container,
+  .section,
+  .summary,
+  .grid-2 {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure side-by-side remains in print */
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* Hide buttons in print */
+  .actions {
+    display: none;
+  }
+
+  .emp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.emp-box {
+  background: #f1f4f6;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.emp-box label {
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  margin: 6px 0 2px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: #2e7d32;
+  color: white;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.logo-box {
+  width: 90px;
+  height: 90px;
+  background: #2e7d32;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.table-total {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+
+
+}
